@@ -17,6 +17,7 @@ class PostController extends Controller
                $user=Post::where('title','LIKE',"%$search%")->paginate(3);
           }
           else{
+            //testing things 
             $user=Post::paginate(3);
         }  
    
@@ -98,5 +99,8 @@ class PostController extends Controller
         $del=post::find($id);
         $del->delete();
         return to_route('dashboard');
+    }
+    public function test(){
+        //for testing
     }
 }
